@@ -4,7 +4,11 @@ import puppeteer from "puppeteer";
 
 const app = express();
 app.use(cors({
-  origin: "https://thetendersdesk1.vercel.app"
+  origin: [
+    "https://thetendersdesk1.vercel.app",
+    "http://localhost:5173",  // local dev ke liye
+    "http://localhost:3000",
+  ]
 }));
 
 app.get("/bihar-tenders", async (req, res) => {
